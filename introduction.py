@@ -43,4 +43,57 @@ Forms:
 2. advanced: forms for models, interating media, formsets, Customing validation
 '''
 
+'''
+Developemtn Process:
 
+1. settings: overview, full list of settings
+2. application: overview
+3. exceptions: overview
+4. django-admin and manage.py: overview, adding cutom commands
+5. testing: introduction, writing and run testing, include testing tools, advace toops
+6. deployments: overview, wsgi servers, asgi servers, static files deploying, tracing code erros in email, deployment checklist
+'''
+
+'''
+Admin:
+
+1. admin site
+2. admin actions
+3. admin documentation generator
+'''
+
+'''
+Security:
+
+1. Overview
+2. Django secuity issue disclose
+3. Clickjacking protection
+4. Cross site request frogery protection
+5. Crytographic singing
+'''
+
+'''
+Performace and optimazation
+
+1. overview
+'''
+
+'''
+Common Web Application Tools:
+
+1. Caching
+2. Logging
+3. Sending emails
+4. Pagination
+5. Sessions
+6. Data validation
+'''
+
+'''
+Install:
+
+1. Appliaction
+    Template:
+    View:
+    Model:
+'''
