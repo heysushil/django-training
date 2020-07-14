@@ -121,5 +121,46 @@
         context = {'year': year, 'article_list': a_list}
         returnd render(request, 'news/year_archive.html', context)
 
+## Templates desing
+
+        Note: THis is basic sysntax of html
+        <html>
+            <head>
+                <title>Django</title>
+            </head>
+            <body>
+                <h1>Hello Django</h1>
+            </body>
+        </html>
+
+Note: this html code is using django code to shwo articls
+
+{% extends "base.html" %}
+
+{% block title %}Articles for {{ year }}{% endblock %}
+
+{% block content %}
+<h1>Article for {{ year }}</h1>
+
+{% for article in article_list %}
+    <p>{{ article.headline }}</p>
+    <p>By {{ article.reporter.full_name }}</p>
+    <p>Published {{ article.pub_date|date:"F j, Y" }}</p>
+{% endfor %}
+{% endblock %}
 
 
+>Note: in uper html code at first we exteded base.html file which is static and for which we are createing base.html file sepratly and used it in multiple files as per requiremnts
+
+>Note: mysite/templates/base.html
+
+{% load static %}
+<html>
+<head>
+    <title>{% block title %}{% endbloack %}</title>
+</head>
+<body>
+    <img src="{% static "images/logo.png" %}" alt="hi">
+    {% block content %}{% endblock %}
+</body>
+</html>
