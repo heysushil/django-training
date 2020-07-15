@@ -16,7 +16,7 @@
     django-admin startproject projectname
 1. for running django project run this command:
     py manage.py runserver
-1. for creating new app in project:
+1. for creating new app in project you must have to in your project main file then run this command:
     py manage.py startapp polls
 
 ## Understanding of app in Django freamwork
