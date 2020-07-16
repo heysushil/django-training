@@ -7,7 +7,7 @@
 3. Then you will install Django by running this command - py -m pip install Django
 4. Agter that you also need to have database. Best caase to use xampp server and use phpmyadmin which also provide user interface
 
-## Setps
+## Setps to install Django and app
 
 1. first to use this command to install django:
     py -m pip install Django
@@ -47,4 +47,14 @@
 
 1. By click in to insatll xampp server > [insall xampp server](https://www.apachefriends.org/xampp-files/7.4.8/xampp-windows-x64-7.4.8-0-VC15-installer.exe)
 1. connect with xampp and Django fremawork
+1. For using mysql neet to download mysqlclient for that [visti this site](https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient)
+1. in this tutorail with python version 3.8.2 using this = mysqlclient‑1.4.6‑cp38‑cp38‑win32.whl
 1. For connecting database with Django we need to have server name, database user name, dabase user password and database name
+
+## Settings for Database:
+
+1. first thing to change your time zone on parent folder mysite->settings.py => TIME_ZONE = 'Asia/Kolkata'
+1. also creat static folder for storing css,js,image which you create in root folder mystie->static 
+1. also in root folder -> settings.py at bottom befor static_url past this line => STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+1. root folder ->settings.py changes on databse
+1. after provide all database details at final run => py manage.py migrate this command to create all required tables in your choosen database
