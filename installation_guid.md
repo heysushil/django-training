@@ -58,3 +58,15 @@
 1. also in root folder -> settings.py at bottom befor static_url past this line => STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 1. root folder ->settings.py changes on databse
 1. after provide all database details at final run => py manage.py migrate this command to create all required tables in your choosen database
+
+
+## Command realted to model when you creat model in your app
+
+> Note: Remeber you are using mysql database by Xampp server and for that you need to also start xampp server and in which you start apache and mysql.
+
+1. first thing is to add your app name into settings.py installed_apps section. for know go to check settings.py installed_app section to know more.
+1. then created 2 classes Question and Choice in models.py chick this file for more.
+1. then need to migrate it for generating migrations file whcih sotes in your apps migration folder for more see migration folder in polls app. for that need to run this command -> py manage.py makemigrations polls
+1. after that need to generate sql qury using migration file and for that need to run this command -> py manage.py sqlmigrate polls 0001 . in my case app name is polls and file name is 0001 which is auto generated
+1. then finally for creating tables in our database need to run final command -> py manage.py migrate
+1. know you have successfully get the tables of Qustion and Choice in your database. for that you need to refresh your database.

@@ -9,5 +9,5 @@ urlpatterns = [
     # 3. kwargs: 
     # 4. name: 
     path('', views.index, name='index'),
-    # path('', views.user, name='user'),
+    # path('user/', views.user, name='user'),
 ]
