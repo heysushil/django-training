@@ -70,3 +70,7 @@
 1. after that need to generate sql qury using migration file and for that need to run this command -> py manage.py sqlmigrate polls 0001 . in my case app name is polls and file name is 0001 which is auto generated
 1. then finally for creating tables in our database need to run final command -> py manage.py migrate
 1. know you have successfully get the tables of Qustion and Choice in your database. for that you need to refresh your database.
+
+## Neet to add some data on Question and Choice table by shell:
+
+1. For opeing shell in terminal run : py manage.py shell
