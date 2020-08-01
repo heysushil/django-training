@@ -2,6 +2,10 @@
 
 > Note: Apna account GitHub par banao aur is repository ko star karlo and mere profile ko follow. Taki sare updates milte rahe
 
+### मेरे Youtube चैनल को सबस्क्राइब करना ना भूलो ताकि आपको कोड का पूरा फ़्लो समझमे आए - https://www.youtube.com/channel/UCphs2JfmIClR62wbyf76HDg
+
+### कोई भी सवाल है उसको मेरे यूट्यूब चैनल के कमेन्ट या डिस्कशन सेक्शन मे पूछ सकते हो - https://www.youtube.com/channel/UCphs2JfmIClR62wbyf76HDg/discussion
+
 
 ## About Django - Framwork
 
