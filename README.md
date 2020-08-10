@@ -1,93 +1,19 @@
-# Django Framwork Onlin Training - YouTueb Lectures
+# Django Training with YouTube Videos and Excercises. Visit [Django Online Training on Hey Sushil](https://www.youtube.com/playlist?list=PLK6wiPavf7QjH9JNIYr18E2YgQxoFewL6)
 
-> Note: Apna account GitHub par banao aur is repository ko star karlo and mere profile ko follow. Taki sare updates milte rahe
+### मेरे Youtube चैनल को सबस्क्राइब करना ना भूलो ताकि आपको कोड का पूरा फ़्लो समझमे आए - [Hey Sushil YouTube Channel](https://www.youtube.com/channel/UCphs2JfmIClR62wbyf76HDg)
 
-### मेरे Youtube चैनल को सबस्क्राइब करना ना भूलो ताकि आपको कोड का पूरा फ़्लो समझमे आए - https://www.youtube.com/channel/UCphs2JfmIClR62wbyf76HDg
+### कोई भी सवाल है उसको मेरे यूट्यूब चैनल के कमेन्ट या डिस्कशन सेक्शन मे पूछ सकते हो - [Hey Sushil YouTube Discussion Point](https://www.youtube.com/channel/UCphs2JfmIClR62wbyf76HDg/discussion)
 
-### कोई भी सवाल है उसको मेरे यूट्यूब चैनल के कमेन्ट या डिस्कशन सेक्शन मे पूछ सकते हो - https://www.youtube.com/channel/UCphs2JfmIClR62wbyf76HDg/discussion
+### और हाँ GitHub पर मुझे फॉलो करना ना भूलो ताकि सारे अपडेट एण्ड वर्क आपको मिलता रहे। 
 
+### पाइथान को और अच्छे से समझने के लिए [Hey Sushil YouTube](https://www.youtube.com/channel/UCphs2JfmIClR62wbyf76HDg) चैनल पर उपस्थित इन प्लेलिस्ट को देख सकते हो:
 
-## About Django - Framwork
-
-C / C++ 
-
-C: 
-    function
-C++: 
-    class:
-        method (function)
-
-    Example: class Calculation:
-                function add()
-                function sub()........
-
-## Normal Project: (in Web Development)
-
-    Example: Facebook:
-                Web Degining:
-                    HTML
-                    CSS
-                    JavaScript
-
-                Web Develpemnt:
-                    Python
-
-                    Example:
-                        user->data->recived by python-> check data -> if data right then send to database else show error message -> send data to database -> if every rihgt user will successfully login
-
-                Database:
-                    MySQL:
-
-                        Example:
-                            sql query: chekc mail and password if exists in database table -> then show true or false
-
-## Normal case me:
-    1. hau ek html page banyeg
-    2. html page me python ka code likh
-    3. sabse pahle fir databse connection karo
-    4. table ko get karke usme data store kayegan
-    5. security pobleam
-    6. data to fillter ya chekc krana ki wo kahi spam to nahi hai
-
-    hum apne hisab se folder aur files ko banate chale jate hai
-
-## Framwork: 
-
-    MVC = Model View Controller
-
-    Model: database
-    View: Web Designing
-    Controller: Python
-
- Points:
-    dependancy
-    well structed
-
-
-## Django:
-
-    MVT: Model View Template
-
-    Model: Database
-    View: Python
-    Template: Web Designing
-
-    Other facilites:
-        coockes
-        session
-        database connectivity
-        email
-
-    Features:
-        1. django documentation well setuped
-        2. seo friednly
-        3. test case
-        4. secuty
-
-        
-
-## Question:
-
-1. what is mvc?
-2. what is mvt in django?
-3. what is the diff b/w mcv and mvt
+1. [Full Python Course Video on Hey Sushil](https://www.youtube.com/playlist?list=PLK6wiPavf7QikS9PMYrGZXz1HlE1KZLD3)
+1. [Numpy Array Video on Hey Sushil](https://www.youtube.com/playlist?list=PLK6wiPavf7QhptzzEb7ZuSoF7mPrT_m1a)
+1. [Django Online Training on Hey Sushil](https://www.youtube.com/playlist?list=PLK6wiPavf7QjH9JNIYr18E2YgQxoFewL6)
+1. [Python Project Video Playlist on Hey Sushil](https://www.youtube.com/playlist?list=PLK6wiPavf7Qj-NLJhbkxw9QfonweHafcN)
+1. [Tips and Trics for Programming Video Playlist on Hey Sushil](https://www.youtube.com/playlist?list=PLK6wiPavf7QiVLYXrC2TW_fdcZp57MgMB)
+1. [Python Online Class on Hey Sushil](https://www.youtube.com/playlist?list=PLK6wiPavf7QgnXqPf9jBEVr1iNUxiVoHG)
+1. [PHP Project with Full Details and Source code on Hey Sushil](https://www.youtube.com/playlist?list=PLK6wiPavf7QiEj6IPc3lkjz1wR4w9RM6B)
+1. [GitHub tutorials in Hindi on Hey Sushil](https://www.youtube.com/playlist?list=PLK6wiPavf7Qjydpc5v-hdIoqCx2V19pHP)
+1. [Hey Kya karu main on Hey Sushil](https://www.youtube.com/playlist?list=PLK6wiPavf7QhMIbSQH56_qgtMvl30TSmj)
