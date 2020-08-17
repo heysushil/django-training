@@ -80,3 +80,19 @@
 ## Neet to add some data on Question and Choice table by shell:
 
 1. For opeing shell in terminal run : py manage.py shell
+
+## Created super admin 
+
+1. iske liye superadmin user command run kiya and user aur password defin kiye tha
+
+## View me method create karna
+
+1. index method: for showing latest question
+1. detil method: for swhoing individual question and choises
+1. result method: for showing question result
+1. vote action: for voting behlaf of question
+
+## Url create karenge for showing view methos
+
+1. Polls ke urls file me upar jitne bhi view ke methods create kiye hain unko add karna hai. Same to same jaise index ke liye kiya tha.
+1. In sabhi methods ko create karne ke bad inko url ko change karke check kar sakte ho.

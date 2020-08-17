@@ -1,3 +1,4 @@
+# from mysite.polls.views import results
 from django.urls import path
 from . import views
 
@@ -8,6 +9,12 @@ urlpatterns = [
     # 2. view: in this pass a method name of views
     # 3. kwargs: 
     # 4. name: 
+    # index url is: /polls/
     path('', views.index, name='index'),
-    # path('user/', views.user, name='user'),
+    # /polls/1/
+    path('<int:question_id>/', views.detial, name='detail'),
+    # /polls/1/results/
+    path('<int:question_id>/results/', views.results, name='results'),
+    # /polls/1/vote/
+    path('<int:question_id>/vote/', views.vote, name='vote')
 ]
