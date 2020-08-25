@@ -5,10 +5,46 @@
         h1{
             color: orange; 
             background-color : green;
+            text-align: center;
+            font-size: 35px;
+        }
+        li{
+            font-size: 20px;
+            color: green;
         }
     </style>
 </head>
 <body>
     <h1>Welcome to Question List Page | Choose Your Question</h1>
+    <h2>Question in List </h2>
+    {% comment %} CHEKC latest_question_list is available or not {% endcomment %}
+    {% if latest_question_list %}
+        <ul>
+        {% for question in latest_question_list %}
+            <li><a href="/polls/{{ question.id }}/"> {{ question.question_text }} </a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% comment %} <h2> question in table</h2>
+
+    {% if latest_question_list %}
+        <table>
+            <thead>
+                <th>
+                    <td>ID</td>
+                    <td>Question Name</td>
+                </th>
+            </thead>
+            <tbody>
+            {% for question in latest_question_list %}
+            <tr>
+                <td>{{ question.id }}</td>
+                <td><a href="/polls/{{ question.id }}"> {{ question.question_text }} </a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %} {% endcomment %}
 </body>
 </html>
