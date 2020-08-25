@@ -1,15 +1,18 @@
 from django.shortcuts import render
 
 from django.http import HttpResponse
-
+# import django.template.loader as loader
+from django.template import loader 
 from .models import Question
 # Create your views here.
 
 # index is a default function
 def index(request):
-    latest_question = Question.objects.order_by('-pub_date')
-    output = ', '.join([q.question_text for q in latest_question])
-    return HttpResponse(output)
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    # define a html page in whcih you want to share the data
+    template = loader.get_template('polls/index.html')
+    context = {'latest_question_list' : latest_question_list,}
+    return HttpResponse(template.render(context, request))
 
 # Single question ka detail show karne ke liye method
 def detial(request, question_id):
