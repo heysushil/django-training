@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Index Page</title>
+    <style type="text/css">
+        h1{
+            color: orange; 
+            background-color : green;
+            text-align: center;
+            font-size: 35px;
+        }
+        p{
+            font-size: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Question Detail Page</h1>
+    {% if question %}
+    <p>{{ question }}</p>
+    {% endif %}
+</body>
+</html>
