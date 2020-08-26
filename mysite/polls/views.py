@@ -10,9 +10,7 @@ from .models import Question
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     # define a html page in whcih you want to share the data
-    # template = loader.get_template('polls/index.html')
     context = {'latest_question_list' : latest_question_list,}
-    # return HttpResponse(template.render(context, request))
     return render(request, 'polls/index.html', context)
 
 # Single question ka detail show karne ke liye method
@@ -22,7 +20,7 @@ def detial(request, question_id):
     # except Question.DoesNotExist:
     #     raise Http404('Question does not exists.')
     question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'polls/detail.html', {'question' : question})
+    return render(request, 'polls/detail.html', {'questiondata' : question})
 
 # Question ke result ko show karnae ke liye method
 def results(request, question_id):

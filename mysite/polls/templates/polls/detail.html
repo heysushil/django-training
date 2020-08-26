@@ -16,8 +16,14 @@
 </head>
 <body>
     <h1>Welcome to Question Detail Page</h1>
-    {% if question %}
-    <p>{{ question }}</p>
-    {% endif %}
+
+    <h1>Question Name: {{ questiondata.question_text }}</h1>
+
+    {% comment %} Get choise of related question {% endcomment %}
+    <ul>
+    {% for choice in questiondata.choice_set.all %}
+        <li>{{ choice.choice_text }}</li>
+    {% endfor %}
+    </ul>
 </body>
 </html>
