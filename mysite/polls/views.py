@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 # import django.template.loader as loader
 from django.template import loader 
 from .models import Question
@@ -17,7 +17,11 @@ def index(request):
 
 # Single question ka detail show karne ke liye method
 def detial(request, question_id):
-    question = Question.objects.get(pk=question_id)
+    # try:
+    #     question = Question.objects.get(pk=question_id)
+    # except Question.DoesNotExist:
+    #     raise Http404('Question does not exists.')
+    question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/detail.html', {'question' : question})
 
 # Question ke result ko show karnae ke liye method
