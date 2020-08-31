@@ -8,6 +8,12 @@
             text-align: center;
             font-size: 35px;
         }
+        h2{
+            color: green;
+            background: orange;
+            text-align: left;
+            font-size: 30px;
+        }
         p{
             font-size: 20px;
             color: green;
@@ -16,13 +22,13 @@
 </head>
 <body>
     <h1>Welcome to Question Detail Page</h1>
-
-    <h1>Question Name: {{ questiondata.question_text }}</h1>
+    <a href="/polls/">Back</a>
+    <h2><b>Question Name: </b>{{ questiondata.question_text }}</h2>
 
     {% comment %} Get choise of related question {% endcomment %}
     <ul>
     {% for choice in questiondata.choice_set.all %}
-        <li>{{ choice.choice_text }}</li>
+        <li>{{ choice.choice_text }} {{ choice.pk }} {{ choice.votes }} {{ choice.question_id }}</li>
     {% endfor %}
     </ul>
 </body>

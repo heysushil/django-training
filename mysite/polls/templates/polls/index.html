@@ -21,7 +21,8 @@
     {% if latest_question_list %}
         <ul>
         {% for question in latest_question_list %}
-            <li><a href="/polls/{{ question.id }}/"> {{ question.question_text }} </a></li>
+            {% comment %} /polls/{{ question.id }}/ {% endcomment %}
+            <li><a href="{% url 'polls:detail' question.id %}"> {{ question.question_text }} </a></li>
         {% endfor %}
         </ul>
     {% endif %}
@@ -46,5 +47,13 @@
             </tbody>
         </table>
     {% endif %} {% endcomment %}
+
+    {% comment %} 
+    <?php foreach($kye => $value){ ?>
+        <ul>
+            <li><?php echo $value; ?></li>
+        </ul>
+    <?php } ?>
+    {% endcomment %}
 </body>
 </html>

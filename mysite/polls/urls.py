@@ -3,6 +3,9 @@ from django.urls import path
 from . import views
 
 # in app urls.py file we will creat a path which we will pass to our main project urls file
+
+# discribe app name to which these all urls are realted
+app_name = 'polls'
 urlpatterns = [
     # in path have 4 arguemts
     # 1. route: 127.0.0.1/8000/polls/
