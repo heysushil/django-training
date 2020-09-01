@@ -22,14 +22,27 @@
 </head>
 <body>
     <h1>Welcome to Question Detail Page</h1>
-    <a href="/polls/">Back</a>
+    <a href="{% url 'polls:index' %}">Back</a>
     <h2><b>Question Name: </b>{{ questiondata.question_text }}</h2>
 
+    {% if error_message %}<p>{{ error_message }}</p>{% endif %}
+
+    {% comment %} create a form for voting {% endcomment %}
+    <form action="{% url 'polls:vote' questiondata.id %}" method="post">
+    {% csrf_token %}
+    {% for choice in questiondata.choice_set.all %}
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+        <label for="choice{{ forloop.counter }}"> {{ choice.choice_text }} </label><br>
+    {% endfor %}
+    <br>
+    <input type="submit" value"Vote">
+    </form>
+
     {% comment %} Get choise of related question {% endcomment %}
-    <ul>
+    {% comment %} <ul>
     {% for choice in questiondata.choice_set.all %}
         <li>{{ choice.choice_text }} {{ choice.pk }} {{ choice.votes }} {{ choice.question_id }}</li>
     {% endfor %}
-    </ul>
+    </ul> {% endcomment %}
 </body>
 </html>

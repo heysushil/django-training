@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.urls import reverse
 # import django.template.loader as loader
 from django.template import loader 
-from .models import Question
+from .models import Question, Choice
 # Create your views here.
 
 # index is a default function
@@ -28,4 +29,13 @@ def results(request, question_id):
     return HttpResponse(response % question_id)
 
 def vote(request, question_id):
-    return HttpResponse("You are voting on question %s" % question_id)
+    question = get_object_or_404(Question, pk=question_id)
+    # agar user choice ko select kar rah hai ya nahi usko handel karna hai $_POST['choice'] | $this->input->post('choice')
+    try:
+        selected_choice = question.choice_set.get(pk=request.POST['choice'])
+    except (KeyError, Choice.DoesNotExist):
+        return render(request, 'polls/detail.html', {'error_message': 'You didn\'t select any choice.',})
+    else:
+        selected_choice.votes += 1
+        selected_choice.save()
+        return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
