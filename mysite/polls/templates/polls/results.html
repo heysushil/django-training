@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Result Page</title>
+    <style type="text/css">
+        h1{
+            color: orange; 
+            background-color : green;
+            text-align: center;
+            font-size: 35px;
+        }
+        h2{
+            color: green;
+            background: orange;
+            text-align: left;
+            font-size: 30px;
+        }
+        p{
+            font-size: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Question Result Page</h1>
+    <a href="{% url 'polls:index' %}">Back</a>
+    <h2><b>Question Name: </b>{{ question.question_text }}</h2>
+
+    {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }} -- {{ choice.votes }} </li>
+    {% endfor %}
+
+    
+
+</body>
+</html>
