@@ -23,14 +23,14 @@
 <body>
     <h1>Welcome to Question Detail Page</h1>
     <a href="{% url 'polls:index' %}">Back</a>
-    <h2><b>Question Name: </b>{{ questiondata.question_text }}</h2>
+    <h2><b>Question Name: </b>{{ question.question_text }}</h2>
 
     {% if error_message %}<p>{{ error_message }}</p>{% endif %}
 
     {% comment %} create a form for voting {% endcomment %}
-    <form action="{% url 'polls:vote' questiondata.id %}" method="post">
+    <form action="{% url 'polls:vote' question.id %}" method="post">
     {% csrf_token %}
-    {% for choice in questiondata.choice_set.all %}
+    {% for choice in question.choice_set.all %}
         <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
         <label for="choice{{ forloop.counter }}"> {{ choice.choice_text }} </label><br>
     {% endfor %}

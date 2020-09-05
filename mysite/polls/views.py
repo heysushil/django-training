@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 # import django.template.loader as loader
-from django.template import loader 
+from django.template import loader
 # improt djangos generic modul to use it
 from django.views import generic
 
@@ -22,13 +22,20 @@ Genric or predefine child class use ke liye setups:
 '''
 
 class IndexView(generic.ListView):
-    pass
+    template_name = 'polls/index.html'
+    context_object_name = 'latest_question_list'
+
+    def get_queryset(self):
+        # hamne kewa 5 row data table se get kiya
+        return Question.objects.order_by('-pub_date')[:5]
 
 class DetailView(generic.DetailView):
-    pass
+    model = Question
+    template_name = 'polls/detail.html'
 
 class ResultsView(generic.DetailView):
-    pass
+    model = Question
+    template_name = 'polls/results.html'
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
