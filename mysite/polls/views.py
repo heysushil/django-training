@@ -26,9 +26,9 @@ class IndexView(generic.ListView):
     context_object_name = 'latest_question_list'
 
     def get_queryset(self):
-        # hamne kewa 5 row data table se get kiya
+        # Return 5 latest question by this.
         return Question.objects.order_by('-pub_date')[:5]
-
+    
 class DetailView(generic.DetailView):
     model = Question
     template_name = 'polls/detail.html'
