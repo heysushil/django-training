@@ -18,7 +18,7 @@ Genric or predefine child class use ke liye setups:
 
 1. Convert url to use generic code?
 2. Hamare userdefine methods ko replace karenge classes se is case me main pahle ke methods ko comment kar raha hu taki check karte time uska bhi kar sako.
-3. Use generic methos
+3. Use generic methos 
 '''
 
 class IndexView(generic.ListView):
