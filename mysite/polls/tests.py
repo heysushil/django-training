@@ -1,7 +1,9 @@
 import datetime
+from django.http import response
 
-from django.test import TestCase
+from django.test import TestCase, Client
 from django.utils import timezone
+from django.urls import reverse
 
 from .models import Question
 
@@ -31,3 +33,34 @@ class QuestionModelTests(TestCase):
         time = timezone.now() - datetime.timedelta(hours=23, minutes=59, seconds=59)
         recent_question = Question(pub_date=time)
         self.assertIs(recent_question.was_published_recently(), True)
+
+# new question create check ke liye method
+def create_question(question_text, days):
+    # Jo bhi qeustion create kiya gaya hai uski date agar past me hain to negative ya fir abhi publish hona hai to positive milega.
+    time = timezone.now() + datetime.timedelta(days=days)
+    return Question.object.create(question_text=question_text, pub_date=time)
+
+class QuestionIndexViewTests(TestCase):
+    # agar koi question na ho to page par message show karan hai
+    def test_no_question(self):
+        response = self.client.get(reverse('polls:index'))
+        # sabse pahle status check kiya
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "No polls are available")
+        self.assertQuerysetEqual(response.context['latest_question_list'], [])
+
+    # agar past question list milta hai to
+    def test_past_question(self):
+        create_question(question_text="Past question.", days=-30)
+        response = self.client.get(reverse('polls:index'))
+        self.assertQuerysetEqual(
+            response.context['laste_question_list'],
+            ['<Question: Past question.>']
+        )
+
+    # futre question hame index page par nahi dikha hai.
+    def test_future_question(self):
+        create_question(question_text="Future question.", days=30)
+        response = self.client.get(reverse('polls:index'))
+        self.assertContains(response, "No polls are available.")
+        self.assertQuerysetEqual(response.context['latest_question_list'], [])
