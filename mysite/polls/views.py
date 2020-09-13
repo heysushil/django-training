@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.template import loader
 # improt djangos generic modul to use it
 from django.views import generic
+from django.utils import timezone
 
 from .models import Question, Choice
 # Create your views here.
@@ -27,7 +28,11 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         # Return 5 latest question by this.
-        return Question.objects.order_by('-pub_date')[:5]
+        # abhi tak hum koi bhi 5 existing latest question return kar rahe the.
+        # But ab kewal jo recent ya old question hai wahi return honge. Baki nahi honge.
+        # return Question.objects.order_by('-pub_date')[:5]
+        # pub_date__lte use kiya hai <= condtion ke liye
+        return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
     
 class DetailView(generic.DetailView):
     model = Question
