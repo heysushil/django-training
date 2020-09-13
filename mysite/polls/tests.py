@@ -38,7 +38,7 @@ class QuestionModelTests(TestCase):
 def create_question(question_text, days):
     # Jo bhi qeustion create kiya gaya hai uski date agar past me hain to negative ya fir abhi publish hona hai to positive milega.
     time = timezone.now() + datetime.timedelta(days=days)
-    return Question.object.create(question_text=question_text, pub_date=time)
+    return Question.objects.create(question_text=question_text, pub_date=time)
 
 class QuestionIndexViewTests(TestCase):
     # agar koi question na ho to page par message show karan hai
