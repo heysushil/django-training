@@ -1,22 +1,16 @@
 <html>
 <head>
     <title>Index Page</title>
-    <style type="text/css">
-        h1{
-            color: orange; 
-            background-color : green;
-            text-align: center;
-            font-size: 35px;
-        }
-        li{
-            font-size: 20px;
-            color: green;
-        }
-    </style>
+    {% comment %} loading static file here {% endcomment %}
+    {% load static %}
+    {% comment %} get style.css file {% endcomment %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 </head>
 <body>
     <h1>Welcome to Question List Page | Choose Your Question</h1>
     <h2>Question in List </h2>
+    {% load static %}
+    <img src="{% static 'polls/images/heysushil.png' %}">
     {% comment %} CHEKC latest_question_list is available or not {% endcomment %}
     {% if latest_question_list %}
         <ul>

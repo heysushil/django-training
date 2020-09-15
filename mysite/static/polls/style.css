@@ -1,0 +1,30 @@
+/* 
+CSS coding ke type
+
+1. in-line css: ye direct html tag me likha jata hai:
+    Example: <p style="color:red;">Hello paragraph</p>
+
+2. Internal css: ye html file me head section me likha jata hai.
+    Example:
+        <style>
+            p{
+                color: red;
+            }
+        </style>
+
+3. External css: ye ek seprate css file banai jati hai.
+    Example: Jaise ki ye css ki file.
+*/
+body{
+    background-color: orangered;
+}
+h1{
+    color: orange; 
+    background-color : green;
+    text-align: center;
+    font-size: 35px;
+}
+li{
+    font-size: 20px;
+    color: green;
+}
