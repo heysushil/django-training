@@ -29,6 +29,16 @@ class QuestionAdmin(admin.ModelAdmin):
     ]
     # yeha par choices ko fields ko add karna hai
     inlines = [ChoiceInline]
+    
+    '''
+    list_display: ye admin me quesiton list ko show karega aur us list me hum jo show karana cahte hain. 
+    Usko hum yaha se tuple ke form me pass karenge.
+    ''' 
+    list_display = ('question_text', 'pub_date', 'was_published_recently')
+
+    # list_filter ka use karna hai search box show karne ke liye
+    list_filter = ['pub_date']
+    
 
 admin.site.register(Question, QuestionAdmin)
 

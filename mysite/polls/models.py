@@ -20,6 +20,12 @@ class Question(models.Model):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
+    # admin me filter show karne ke liye hum kuch exta arguments define kar rahe hain.
+    was_published_recently.admin_order_field = 'pub_date'
+    was_published_recently.boolean = True
+    was_published_recently.short_description = 'Published recently?'
+
+
 # also creating a choice class which have question related choices 
 '''
 MySQL:
