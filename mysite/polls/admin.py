@@ -23,6 +23,7 @@ class QuestionAdmin(admin.ModelAdmin):
     # fields = ['pub_date', 'question_text']
 
     # file set ka use karne section bana 
+    # https://docs.djangoproject.com/en/3.1/ref/contrib/admin/#django.contrib.admin.ModelAdmin.fieldsets
     fieldsets = [
         (None, {'fields': ['question_text']}),
         ('Date information', {'fields': ['pub_date']}),
@@ -38,7 +39,9 @@ class QuestionAdmin(admin.ModelAdmin):
 
     # list_filter ka use karna hai search box show karne ke liye
     list_filter = ['pub_date']
-    
+
+    # add search bar on top of questions list
+    search_fields = ['question_text']    
 
 admin.site.register(Question, QuestionAdmin)
 
