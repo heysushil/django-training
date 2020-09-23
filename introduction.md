@@ -82,8 +82,88 @@
     View:
     Model:
 
-# Django me basic khatam hone ke bad kuch jaruri work jo kar sakte ho:
+# Day 37 on Django
 
 1. Basic concepts ko majbut karne ke liye inko padh sakte ho [Django Doc](https://docs.djangoproject.com/en/3.1/intro/whatsnext/)
 1. Index wise padhne ke liye [Django Index](https://docs.djangoproject.com/en/3.1/genindex/)
 1. Django Advance padhne ke liye [Django Advance](https://docs.djangoproject.com/en/3.1/intro/reusable-apps/)
+
+# Day39 on Django Framework with HeySushil
+
+1. mysite project ka file structre jo abhi hai
+
+        mysite/
+            manage.py
+            mysite/
+                __init__.py
+                settings.py
+                urls.py
+                asgi.py
+                wsgi.py
+            polls/
+                __init__.py
+                admin.py
+                apps.py
+                migrations/
+                    __init__.py
+                    0001_initial.py
+                models.py
+                static/
+                    polls/
+                        images/
+                            background.gif
+                        style.css
+                templates/
+                    polls/
+                        detail.html
+                        index.html
+                        results.html
+                tests.py
+                urls.py
+                views.py
+            templates/
+                admin/
+                    base_site.html
+
+
+# Day40 on Django Framework with HeySushil
+
+Django framework me class ke reusibiltiy concept ki tarah hi app ko bhi reuse karna ka tarika milta hai.
+
+Isse ke liye kuch point wise hum pahle samajh lete hai ki kya karna hota hai.
+
+1. Pura python hi reusabilty ka ek bada example hain. Jaise python me hum librarys ka use karte hain.
+1. Python Package Index (PyPi) https://pypi.org/ ke pas bahot hi bada package ka collection hai. Jiska use hum har bar karte rahte hain.
+1. Waise hi Django me bhi bahot sare reusabel apps hain. Jada jankari ke liye check karo https://djangopackages.org/
+1. Waise Django bhi ek reusable package hi hai agar ek tarike se dekho to.
+
+## Kaise Polls app ko reusable banaya jaye?
+
+1. Waise humne jab Polls app banaya tha hamare project me tab usko main project se jodne ke liye kya kiya tha.
+1. Humne URLconf joki main settings.py file me humko milta hai useme include kiya tha. Then hum Polls app ko use kar sake the.
+1. Waisa hi kuch hum yaha karne wale hain Polls app ko reusable app banae ke liye.
+
+## But usse pahle Package aur App me antar samjhna jaruri hai?
+
+### Package kya hai?
+
+1. Package kai sare python files ka collection hai. Ya fir kai classes ka collection hai.
+1. Jaise ki hume jab bhi kisi library ke module ka use hota hai to hum use import karte hain. Jaise ki import yourLibrary etc... to ye tarike se hum librarys ko import karte hain.
+1. Yahin hain packages to App kya hai.
+
+### App kya hai Django me?
+
+1. App bhi lagbhag lagbhag same hai because isme bhi multiple pytho files hoti to hai but useke sath me?
+1. Jaise hum jab class create karte hain to usme hame constructer create karna hi hota hai. Python me to ye compalsurry hain.
+1. Same waise Polls ek file directory hai jisko Package jaise use karne ke liye?
+1. App me ek special file __init__.py hoti hai joki isko as a package use karne me madad karti hai.
+1. Bhale hi ye __init__.py file empty ho but ho jarur.
+1. App apne app ko jakar check karo usme ye file jarur hoti hai.
+
+### __init__.py kyo hota hai app folder me?
+
+1. Django application asal me python package hi hai. Aur ye kisi bhi dusre Django project me use kiya ja sake uske liye hi isko aysa banaya gaya hai.
+1. Django folder structre me jab hum app create karte hain to usme hume kuch important files milte hain. Jo ki hain: models, tests, urls, views.
+
+> Note: Abhi ke liye bilkul ye thoda ka confusing hai but aage chal ke jab hum ispar work karenge then ye samjh me aane lage ga.
+
