@@ -126,7 +126,7 @@
                     base_site.html
 
 
-# Day40 on Django Framework with HeySushil
+# Day41 on Django Framework with HeySushil
 
 Django framework me class ke reusibiltiy concept ki tarah hi app ko bhi reuse karna ka tarika milta hai.
 
@@ -167,3 +167,34 @@ Isse ke liye kuch point wise hum pahle samajh lete hai ki kya karna hota hai.
 
 > Note: Abhi ke liye bilkul ye thoda ka confusing hai but aage chal ke jab hum ispar work karenge then ye samjh me aane lage ga.
 
+### Polls app ka package bana hain?
+
+1. Ab ye sikhna hai ki kaise app ko ek package me convert kare. Taki useko use kar sake.
+1. reusabale package banae ke liye `setuptools` package ka use karna hai jo hamare liye app ko pacakge me convert karega.
+1. Dusra hai `distribute` package, ye 2 package ka use kar ke hum app ko reusable me convert karenge.
+
+
+## Day42 on Django Start creating polls directory at parent directory
+
+1. Iske liye django doc ka use kare https://docs.djangoproject.com/en/3.1/intro/reusable-apps/
+1. 2 aur file banai hain
+    1. setup.cfg: configration ke liye
+    1. setup.py: settings ke liye
+1. In dono files ke bare me jada jankari ke liye is doucment ko padh sakte hain: https://setuptools.readthedocs.io/en/latest/
+1. App package se related doucment online platform par bana hai then is platform ka use kiya ja sakta hai: https://readthedocs.org/
+
+## Finally creating polls app package
+
+1. Iske liye yaha se jankari li ja sakti hai: https://packaging.python.org/tutorials/packaging-projects/
+
+## Day43 on Django with Hey Sushil
+
+1. django polls ko install karna hai
+1. Check ki ye run sahi work kar rha hai ya nahi
+1. Yad rahe hamare case me polls app ka database table pahle se bana hai so hame migrate command nahi chalana hai.
+1. App ko publish kar sakte ho yaha par: https://pypi.org/
+1. Ye package ko publish karne ka tutorial hai: https://packaging.python.org/tutorials/packaging-projects/#uploading-the-distribution-archives
+
+## Django next level doc details
+
+1. Ye hai doc: https://docs.djangoproject.com/en/3.1/intro/whatsnext/
