@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('polls/', include('polls.urls')),
+    # if want to set default then path be blank or gave url name
+    path('', include('polls.urls')),
     path('admin/', admin.site.urls),
 ]

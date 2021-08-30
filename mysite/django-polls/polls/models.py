@@ -48,8 +48,19 @@ class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
+    note = models.CharField(max_length=100)
 
     # creat str method to get all choice
     def __str__(self):
         return self.choice_text
+
+class Userdetails(models.Model):
+    name = models.CharField(max_length=50),
+    father_name = models.CharField(max_length=50)
+
+    # def __str__(self):
+    #     return self.name
+
+    # def __str__(self):
+    #     return self.father_name
 
